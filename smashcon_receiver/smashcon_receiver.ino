@@ -1,9 +1,7 @@
 #include <Arduino_DebugUtils.h>
+#include "sc_espnow.h"
 
 #define DEBUG_LEVEL DBG_VERBOSE
-
-int i = 2;
-float pi = 3.1459;
 
 void setup() {
   // debug setup
@@ -15,9 +13,10 @@ void setup() {
     Debug.timestampOn();
     Debug.newlineOn();
   }
+
+  InitESPNow();
 }
 
 void loop() {
-  DEBUG_VERBOSE("i = %d, pi = %f", i, pi);
   sleep(3);
 }
